@@ -77,30 +77,24 @@ SELECT DISTINCT estado FROM clientes; # atua em 11 estados PA, BA, ES, RS, GO, P
 
 SELECT *
 FROM atores
-ORDER BY ano_nascimento DESC
-
-
+ORDER BY ano_nascimento DESC;
 
 -- 2. O setor de controle de dados vai precisar fazer uma segmentação dos clientes, separando por ordem alfabética. Faça uma ordenação na tabela de clientes a partir da coluna nome_cliente para facilitar o trabalho dos seus colegas.
 
-
-
-
+SELECT * FROM clientes
+ORDER BY nome_cliente ASC;
 
 -- 3. Na tabela de clientes, tente descobrir qual foi o cliente com a data de criação de conta mais antiga, ou seja, o primeiro cliente cadastrado na base.
 
-
-
-
-
-
-
+SELECT nome_cliente, data_criacao_conta FROM clientes
+ORDER BY data_criacao_conta ASC
+LIMIT 1;
 
 -- 4. A empresa gostaria de saber quais são os TOP 5 filmes com a maior duração. Você seria capaz de fazer essa análise?
 
-
-
-
+SELECT * FROM filmes
+ORDER BY duracao DESC
+LIMIT 5;
 
 
 # =======         PARTE 3:        =======#
@@ -115,6 +109,9 @@ ORDER BY ano_nascimento DESC
 
 -- O seu trabalho, portanto, é listar todos os filmes do gênero COMÉDIA e fornecer essas informações ao seu gestor.
 
+SELECT *
+FROM filmes
+WHERE genero = 'comedia';
 
 
 -- 2. A equipe de estratégia fez um levantamento com os críticos de cinema mais conhecidos e descobriram que o ano de 2003 foi um dos anos de sucesso do cinema. Alguns desses críticos foram contratados para ajudar na melhoria do catálogo de filmes, e querem sugerir mais opções de filmes que foram lançados em 2003.
