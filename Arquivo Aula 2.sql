@@ -155,9 +155,15 @@ WHERE duracao BETWEEN 90 AND 100;
 
 -- a) Descubra a quantidade total de alugueis de filmes feitos para todo o período (utilize a coluna id_aluguel para esse cálculo).
 
-
+SELECT
+	COUNT(id_aluguel)
+FROM alugueis;
 
 -- b) Descubra a quantidade total de alugueis de filmes feitos para todo o período (utilize a coluna nota para esse cálculo).
+
+SELECT
+	COUNT(*)
+FROM alugueis;
 
 -- c) Você viu alguma diferença no resultado? O que aconteceu?
 
@@ -166,15 +172,24 @@ WHERE duracao BETWEEN 90 AND 100;
 -- 2. O setor de catálogo precisa saber quantos gêneros de filmes existem na empresa atualmente. Você saberia fazer essa análise?
 
 
-
+SELECT COUNT(DISTINCT genero) FROM filmes;
 
 -- 3. Quantos minutos no total a empresa possui de filmes catalogados?
 
+SELECT
+	SUM(duracao)
+FROM filmes;
 
 
 -- 4. Qual é a duração em minutos do filme mais longo disponível no catálogo? E qual a duração do filme mais curto?
 
-
+SELECT 
+	MAX(duracao), 
+    MIN(duracao)
+FROM filmes;
 
 -- 5. Qual é a média de satisfação dos clientes da empresa em relação aos filmes alugados?
 
+SELECT
+	AVG(nota)
+FROM alugueis;
