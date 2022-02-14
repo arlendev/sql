@@ -113,30 +113,38 @@ SELECT *
 FROM filmes
 WHERE genero = 'comedia';
 
-
 -- 2. A equipe de estratégia fez um levantamento com os críticos de cinema mais conhecidos e descobriram que o ano de 2003 foi um dos anos de sucesso do cinema. Alguns desses críticos foram contratados para ajudar na melhoria do catálogo de filmes, e querem sugerir mais opções de filmes que foram lançados em 2003.
 
 -- Para isso, os críticos contratados precisarão da lista de filmes que a empresa já tem, para que eles possam avaliar se esses filmes realmente são boas opções de se ter no catálogo, e também aproveitar para sugerir outros títulos.
 
 -- O seu trabalho, portanto, é fazer uma consulta ao banco de dados para essa solicitação do projeto. 
 
-
+SELECT * 
+FROM filmes
+WHERE ano_lancamento = 2003;
 
 -- 3. Um dos analistas da equipe percebeu que alguns filmes do gênero Drama, com mais de 120 minutos de duração, não tinham uma boa avaliação dos clientes. Por isso, ele levantou a ideia de se analisar com mais cuidado todos os filmes que se enquadrassem nesses critérios, para verificar se de fato eles estão tendo um baixo rendimento.
 
 -- O seu trabalho é listar todos esses filmes para que seja possível realizar essa análise.
 
-
-
+SELECT *
+FROM filmes
+WHERE genero = 'drama' AND duracao >= 120;
 
 -- 4. A empresa está percebendo que os países do: Canadá, Austrália e Irlanda do Norte estão produzindo bons filmes nos últimos anos. Vendo esse movimento, a empresa decidiu listar todos os atores dessas nacionalidades para pesquisar filmes relacionados e avaliar a possibilidade de incluir mais opções no catálogo, referentes ao cinema desses 3 países.
 
 -- O seu trabalho é listar todos os atores de nacionalidade: Canadá, Austrália e Irlanda do Norte para facilitar essa análise.
 
-
+SELECT *
+FROM atores
+WHERE nacionalidade IN ('Canadá', 'Austrália', 'Irlanda')
+ORDER BY nacionalidade ASC;
 
 -- 5. A empresa decidiu criar uma opção de catálogo alternativa para os seus filmes: agora, os clientes poderão escolher, por exemplo, alugar filmes na faixa de duração entre 90 min e 100 minutos. Seu trabalho será o de iniciar essa organização, e começar mostrando os filmes que possuem uma duração neste intervalo.
 
+SELECT *
+FROM filmes
+WHERE duracao BETWEEN 90 AND 100;
 
 # =======        PARTE 4:       =======#
 # =======  FUNÇÕES MATEMÁTICAS  =======#
