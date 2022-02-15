@@ -14,14 +14,29 @@ SELECT * FROM atuacoes;
 SELECT * FROM clientes;
 SELECT * FROM filmes;
 
+
+# =======        PARTE 1:        =======#
+# =======  CRIANDO AGRUPAMENTOS  =======#
+
 SELECT
 	genero,
     COUNT(*)
 FROM filmes
 GROUP BY genero;
 
-# =======        PARTE 1:        =======#
-# =======  CRIANDO AGRUPAMENTOS  =======#
+SELECT
+	genero,
+    COUNT(*)
+FROM filmes
+WHERE ano_lancamento = 2003
+GROUP BY genero;
+
+SELECT
+	genero,
+    COUNT(*) AS qtd_filmes
+FROM filmes
+GROUP BY genero
+HAVING qtd_filmes >= 10;
 
 -- CASE 1. Você deverá começar fazendo uma análise para descobrir o preço médio de aluguel dos filmes.
 
@@ -45,7 +60,11 @@ Ação e Aventura          | D
 
 -- Você seria capaz de mostrar os gêneros de forma ordenada, de acordo com a média?
 
- 
+ SELECT
+	genero,
+    AVG(preco_aluguel) AS preco_medio
+FROM filmes
+GROUP BY genero;
     
     
 
@@ -65,7 +84,12 @@ Ação e Aventura          | D                | .......
 */
 
 
-
+ SELECT
+	genero,
+    AVG(preco_aluguel) AS preco_medio,
+    COUNT(*) AS qtd_filmes
+FROM filmes
+GROUP BY genero;
 
 -- CASE 2. Para cada filme, descubra a classificação média, o número de avaliações e a quantidade de vezes que cada filme foi alugado. Ordene essa consulta a partir da avaliacao_media, em ordem decrescente.
 
@@ -80,7 +104,14 @@ _______________________________________________________
 ...
 */
 
-
+SELECT 
+	id_filme,
+    AVG(nota) AS avaliacao_media,
+    COUNT(nota) AS num_avaliacoes,
+    COUNT(*) AS num_alugueis
+FROM alugueis
+GROUP BY id_filme
+ORDER BY avaliacao_media DESC;
 
 
 # =======              PARTE 2:               =======#
