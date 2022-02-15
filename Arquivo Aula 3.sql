@@ -121,18 +121,16 @@ ORDER BY avaliacao_media DESC;
 
 -- Cenário 1: Fazer a mesma análise, mas considerando apenas os filmes com ANO_LANCAMENTO igual a 2011.
 
-SELECT 
-	id_filme,
-    AVG(nota) AS avaliacao_media,
-    COUNT(nota) AS num_avaliacoes,
-    COUNT(*) AS num_alugueis
-FROM alugueis
-GROUP BY id_filme
-ORDER BY avaliacao_media DESC;
+ SELECT
+	genero,
+    AVG(preco_aluguel) AS preco_medio,
+    COUNT(*) AS qtd_filmes
+FROM filmes
+WHERE ano_lancamento = 2011
+GROUP BY genero;
 
 
 -- Cenário 2: Fazer a mesma análise, mas considerando apenas os filmes dos gêneros com mais de 10 filmes.
-
 
 
 
