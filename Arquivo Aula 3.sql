@@ -14,12 +14,20 @@ SELECT * FROM atuacoes;
 SELECT * FROM clientes;
 SELECT * FROM filmes;
 
+SELECT
+	genero,
+    COUNT(*)
+FROM filmes
+GROUP BY genero;
+
 # =======        PARTE 1:        =======#
 # =======  CRIANDO AGRUPAMENTOS  =======#
 
 -- CASE 1. Você deverá começar fazendo uma análise para descobrir o preço médio de aluguel dos filmes.
 
-
+SELECT
+	AVG(preco_aluguel)
+FROM filmes;
 
 -- Agora que você sabe o preço médio para se alugar filmes na hashtagmovie, você deverá ir além na sua análise e descobrir qual é o preço médio para cada gênero de filme.
 
