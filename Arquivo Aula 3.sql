@@ -132,7 +132,13 @@ GROUP BY genero;
 
 -- Cenário 2: Fazer a mesma análise, mas considerando apenas os filmes dos gêneros com mais de 10 filmes.
 
-
+ SELECT
+	genero,
+    AVG(preco_aluguel) AS preco_medio,
+    COUNT(*) AS qtd_filmes
+FROM filmes
+GROUP BY genero
+HAVING qtd_filmes >=10;
 
 # =======              PARTE 3:              =======#
 # =======  RELACIONANDO TABELAS COM O JOIN   =======#
@@ -140,12 +146,25 @@ GROUP BY genero;
 
 -- CASE 4. Selecione a tabela de Atuações. Observe que nela, existem apenas os ids dos filmes e ids dos atores. Você seria capaz de completar essa tabela com as informações de títulos dos filmes e nomes dos atores?
 
-
+SELECT 
+	atuacoes.*,
+    filmes.titulo,
+    atores.nome_ator
+FROM atuacoes
+LEFT JOIN filmes
+ON atuacoes.id_filme = filmes.id_filme
+LEFT JOIN atores
+ON atuacoes.id_ator = atores.id_ator;
 
 -- CASE 5. Média de avaliações dos clientes
 
-
-
+SELECT 
+	clientes.nome_cliente,
+    AVG(alugueis.nota) AS avaliacao_media
+FROM alugueis
+LEFT JOIN clientes
+ON alugueis.id_cliente = clientes.id_cliente
+GROUP BY nome_cliente;
 
 
 # =======                         PARTE 4:                           =======#
