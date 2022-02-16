@@ -172,8 +172,6 @@ GROUP BY nome_cliente;
 
 -- CASE 6. Você precisará fazer uma análise de desempenho dos filmes. Para isso, uma análise comum é identificar quais filmes têm uma nota acima da média. Você seria capaz de fazer isso?
 
-SELECT AVG(nota) FROM alugueis; # 7.94
-
 SELECT 
 	filmes.titulo,
     AVG(alugueis.nota) AS avaliacao_media
@@ -197,7 +195,7 @@ HAVING avaliacao_media >= (SELECT AVG(nota) FROM alugueis);
 
 -- CASE 8. Crie uma view para guardar o resultado do SELECT abaixo.
 
-
+CREATE VIEW resultados AS
 SELECT
 	titulo,
     COUNT(*) AS num_alugueis,
