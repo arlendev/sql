@@ -183,6 +183,15 @@ HAVING avaliacao_media >= (SELECT AVG(nota) FROM alugueis);
 
 -- CASE 7. A administração da MovieNow quer relatar os principais indicadores de desempenho (KPIs) para o desempenho da empresa em 2018. Eles estão interessados em medir os sucessos financeiros, bem como o envolvimento do usuário. Os KPIs importantes são, portanto, a receita proveniente da locação de filmes, o número de locações de filmes e o número de clientes ativos (descubra também quantos clientes não estão ativos).
 
+SELECT
+	titulo,
+    COUNT(*) AS num_alugueis,
+    AVG(nota) AS media_nota,
+    SUM(preco_aluguel) AS receita_total
+FROM alugueis
+LEFT JOIN filmes
+ON alugueis.id_filme = filmes.id_filme
+GROUP BY titulo;
 
 
 
