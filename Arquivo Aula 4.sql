@@ -8,9 +8,7 @@
 #===============  CRIAÇÃO e CONFIGURAÇÃO DO BD ===============#
 #=============================================================#
 
--- O primeiro passo é CRIAR e CONFIGURAR o banco de dados 'hashtagidiomas'.
-
--- >
+# O primeiro passo é CRIAR e CONFIGURAR o banco de dados 'hashtagidiomas'.
 
 CREATE DATABASE hashtagidiomas;
 USE hashtagidiomas;
@@ -20,7 +18,7 @@ USE hashtagidiomas;
 #===================  CRIAÇÃO DAS TABELAS ====================#
 #=============================================================#
 
--- No nosso projeto, teremos que criar 3 tabelas: cursos, alunos e vendas.
+#  No nosso projeto, teremos que criar 3 tabelas: cursos, alunos e vendas.
 
 /*
 TABELA 1: cursos
@@ -29,7 +27,11 @@ TABELA 1: cursos
 •	valor_curso
 */
 
--- >
+CREATE TABLE cursos(
+	id_curso INT,
+    nome_curso VARCHAR(50),
+    valor_curso DECIMAL(10, 2)
+);
 
 
 /*
@@ -39,7 +41,11 @@ TABELA 2: alunos
 •	email
 */
 
--- >
+CREATE TABLE alunos(
+	id_aluno INT,
+    nome_aluno VARCHAR(50),
+    email VARCHAR(50)
+);
 
 /*
 TABELA 3: vendas
@@ -49,7 +55,12 @@ TABELA 3: vendas
 •	id_aluno
 */
 
--- >
+CREATE TABLE vendas(
+	id_venda INT,
+    data_venda DATE,
+    id_curso INT,
+    id_aluno INT
+);
 
 
 # ======================== PARTE 3 ===========================#
