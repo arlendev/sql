@@ -136,9 +136,9 @@ SELECT * FROM vendas;
 #==============  ATUALIZANDO VALORES NA TABELA ===============#
 #=============================================================#
 
--- O valor do curso de Francês será reajustado de R$900 para R$750. Atualize o valor na tabela de cursos.
+# O valor do curso de Francês será reajustado de R$900 para R$750. Atualize o valor na tabela de cursos.
 
--- >
+
 
 
 # ======================== PARTE 5 ===========================#
