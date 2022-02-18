@@ -138,7 +138,17 @@ SELECT * FROM vendas;
 
 # O valor do curso de Francês será reajustado de R$900 para R$750. Atualize o valor na tabela de cursos.
 
+SELECT * FROM cursos;
 
+UPDATE cursos
+SET valor_curso = 750
+WHERE id_curso = 3;
+
+SELECT * FROM alunos;
+
+UPDATE alunos
+SET email = 'eliane.audac@gmail.com'
+WHERE id_aluno = 1;
 
 
 # ======================== PARTE 5 ===========================#
@@ -147,7 +157,10 @@ SELECT * FROM vendas;
 
 -- Selecione a tabela de vendas. A compra do cliente 'Pedro' (id_venda = 5) foi reembolsada e por isso ela deve ser excluída do controle de vendas.
 
--- >
+SELECT * FROM vendas;
+
+# DELETE FROM vendas
+# WHERE id_venda = 5;
 
 # ======================== PARTE 5 ===========================#
 #===========  EXCLUINDO TABELAS E BANCOS DE DADOS ============#
@@ -155,4 +168,6 @@ SELECT * FROM vendas;
 
 -- Exclua a tabela vendas e em seguida o banco de dados hashtagidiomas.
 
--- >
+# DROP TABLE vendas
+# DROP DATABASE hashtagidiomas;
+
