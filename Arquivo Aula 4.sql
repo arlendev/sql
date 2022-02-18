@@ -1,4 +1,6 @@
 # ==== INTENSIVÃO DE SQL ==== #
+
+
 # =====      AULA 4      ====== #
 
 
@@ -10,6 +12,8 @@
 
 -- >
 
+CREATE DATABASE hashtagidiomas;
+USE hashtagidiomas;
 
 
 # ======================== PARTE 2 ===========================#
