@@ -79,7 +79,13 @@ _____________________________________
 3        | Francês    | 900         |
 */
 
--- >
+INSERT INTO cursos
+VALUES
+	(1, 'Inglês', 1200),
+    (2, 'Espanhol', 1000),
+    (3, 'Francês', 900);
+    
+SELECT * FROM cursos;
 
 /*
 TABELA 2: alunos
@@ -93,7 +99,13 @@ ________________________________________________
 3        | Pedro      | pedrinho@gmail.com    |
 */
 
--- >
+INSERT INTO alunos
+VALUES
+	(1, 'Eliane', 'eliane@gmail.com'),
+    (2, 'João', 'j.123@hotmail.com'),
+    (3, 'Pedro', 'pedrinho@gmail.com');
+    
+    SELECT * FROM alunos;
 
 /*
 TABELA 3: vendas
