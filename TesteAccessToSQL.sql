@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS `Clientes`;
 CREATE TABLE `Clientes` (
   `Código Cliente` INTEGER NOT NULL, 
   `Empresa` VARCHAR(150) NOT NULL, 
-  `Status` VARCHAR(10) DEFAULT 'B', 
+  `Status` VARCHAR(10) DEFAULT 'A', 
   `Endereço p/ Faturamento` VARCHAR(150), 
   `Bairro` VARCHAR(150), 
   `Cidade` VARCHAR(150), 
@@ -43,8 +43,6 @@ CREATE TABLE `Clientes` (
   INDEX (`Comprador`), 
   PRIMARY KEY (`Código Cliente`)
 ) ENGINE=csv DEFAULT CHARSET=utf8;
-
-SET autocommit=1;
 
 #
 # Dumping data for table 'Clientes'
