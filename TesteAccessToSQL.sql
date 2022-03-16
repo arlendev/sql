@@ -42,3 +42,20 @@ INSERT INTO `Clientes` (`Código Cliente`, `Empresa`, `Status`, `Endereço p/ Fa
 INSERT INTO `Clientes` (`Código Cliente`, `Empresa`, `Status`, `Endereço p/ Faturamento`, `Bairro`, `Cidade`, `UF`, `Cep`, `Endereço p/ Cobrança`, `Bairro p/ Cobrança`, `Cidade p/ Cobrança`, `UF p/ Cobrança`, `Cep p/ Cobrança`, `CGC`, `IE`, `Fone`, `Fax`, `Comprador`, `Ramal`, `Funcionários`, `Ramo`, `Região`, `Observações`) VALUES (2, 'Pirelli Pneus S.A.', 'BT', 'Rs 030, 1610', 'Parque dos Anjos', 'Gravataí', 'RS', '94180-130', 'O Mesmo', NULL, NULL, 'RS', NULL, '59179838/0003-07', '057/0077273', '(51) 484-1188', '(51)484-1866', 'Márcio', NULL, '885', 'Artefatos de borracha - pneus e câmaras', 'Grande Poa', NULL);
 
 SELECT * FROM clientes;
+
+#
+# Table structure for table 'Contatos'
+#
+
+DROP TABLE IF EXISTS `Contatos`;
+
+CREATE TABLE `Contatos` (
+  `Count` INTEGER AUTO_INCREMENT, 
+  `Cliente` INTEGER DEFAULT 0, 
+  `Nome` VARCHAR(50), 
+  `Setor` VARCHAR(50), 
+  `Fone / Ramal` VARCHAR(30), 
+  `Fax` VARCHAR(50), 
+  `E-Mail` VARCHAR(50), 
+  INDEX (`Count`)
+) ENGINE=csv DEFAULT CHARSET=utf8;
